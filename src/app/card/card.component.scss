@@ -1,0 +1,27 @@
+.card{
+  padding: .5rem 1rem;
+  border: 1px dashed #cccccc;
+  margin-bottom: 1rem;
+
+  h2{
+    margin-bottom: .5rem;
+  }
+
+  img{
+    width: 75px;
+    height: 60px;
+  }
+
+.text{
+  font-size: 1.5rem;
+  &.red{
+    color: red;
+  }
+  &.blue{
+    color: blue;
+  }
+  &.green{
+    color: #2dff00;
+  }
+}
+}

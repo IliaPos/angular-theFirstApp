@@ -1,0 +1,42 @@
+<div class="card">
+  <h2 [ngStyle]="{
+  color: card.title.length < 7 ? title.length < 4 ? 'black' :  'green' : 'red',
+  fontWeight: card.title.length < 10 ? 'normal' : 'bold'
+  }">{{index}} {{card.title}}</h2>
+<!--  <p class="text" [ngClass]="{-->
+<!--      blue: textColor === 'blue',-->
+<!--      red: textColor === 'red',-->
+<!--      green: textColor === 'green'-->
+<!--     }">{{text}}</p>-->
+  <p class="text"
+     [class.blue]="textColor === 'blue'"
+     [class.red]="textColor === 'red'"
+     [class.green]="textColor === 'green'"
+  >{{card.text}}</p>
+  <p>{{getInfo()}}</p>
+
+  <div>
+    <img [src]="imgUrl">
+    <br>
+    <button (click)="textColor = 'blue'"> Set blue</button>
+    <button (click)="textColor = 'red'"> Set red</button>
+    <button (click)="textColor = 'green'"> Set green</button>
+    <br>
+    <button [disabled]="disabled" (click)="changeTitle()">Change title</button>
+    <button (click)="card.title = 'Inline title'">Change title inline</button>
+
+  </div>
+
+
+  <!--  <div>-->
+  <!--    <input type="text" #myInput (input)="inputHandler(myInput.value)" [value]="title">-->
+  <!--  </div>-->
+
+  <div>
+    <input type="text" [(ngModel)]="card.title" (ngModelChange)="changeHandler()">
+  </div>
+
+  <div>
+    <p><strong>{{cardDate | date: 'short'}}</strong></p>
+  </div>
+</div>
